@@ -51,4 +51,19 @@ class ProductTest < ActiveSupport::TestCase
     assert @p.price_in_dollars == 123.45
   end
 
+  # Personally, I think it should reject anything beyond 2 decimals.
+  
+  # The danger of writing tests after is that you write tests that verify
+  # the existing behavior, rather than *thinking* about what it is you want.
+
+  test "price_in_dollars handles multiple decimal places" do
+    @p.price_in_dollars = "12.424553"
+    assert_equal 1242, @p.price_in_cents
+  end
+
+  test "dollar conversion is not performed for empty/blank cents value" do
+    @p.price_in_cents = nil
+    assert_nil @p.price_in_dollars
+  end
+
 end
