@@ -12,11 +12,3 @@
  *= require_tree .
  */
 
-form {
-  width: 500px;
-  margin: 0 auto;
-}
-
-form.new-user label {
-  display: block;
-}
