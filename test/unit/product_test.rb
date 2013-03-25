@@ -20,4 +20,14 @@ class ProductTest < ActiveSupport::TestCase
     @p.price_in_cents = "foo"
     refute @p.valid?
   end
+
+  test "must have a price_in_cents" do
+    @p.price_in_cents = nil
+    refute @p.valid?
+  end
+
+  test "must have an integer for price_in_cents" do
+    @p.price_in_cents = 4.50
+    refute @p.valid?
+  end
 end
