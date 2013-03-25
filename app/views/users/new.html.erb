@@ -10,9 +10,13 @@
     <%= f.text_field 'email' %>
   </div>
   <div class="field">
-    <!-- password will go here -->
-    <!-- but how!? -->
-  </div>rai
+    <%= f.label 'password' %>
+    <%= f.password_field 'password' %>
+  </div>
+  <div class="field">
+    <%= f.label 'password_confirmation' %>
+    <%= f.password_field 'password_confirmation' %>
+  </div>
   <div class="field">
     <%= f.submit "Sign up!" %>
   </div>
