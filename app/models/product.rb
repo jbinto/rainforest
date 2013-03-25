@@ -6,10 +6,14 @@ class Product < ActiveRecord::Base
   validates :price_in_dollars, :numericality => { greater_than: 0 }
 
   def price_in_dollars
-  	self.price_in_cents.to_f / 100.0
+    if self.price_in_cents?
+     self.price_in_cents.to_f / 100.0
+    end
   end
 
   def price_in_dollars=(dollars)
-  	self.price_in_cents = (dollars.to_f * 100).to_i
+    if dollars.present?
+     self.price_in_cents = (dollars.to_f * 100).to_i
+    end
   end
 end
