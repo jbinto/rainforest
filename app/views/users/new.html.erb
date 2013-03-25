@@ -1,0 +1,19 @@
+<h1>Sign up</h1>
+
+<%= form_for @user do |f| %>
+  <div class="field">
+    <%= f.label 'name' %>
+    <%= f.text_field 'name' %>
+  </div>
+  <div class="field">
+    <%= f.label 'email' %>
+    <%= f.text_field 'email' %>
+  </div>
+  <div class="field">
+    <!-- password will go here -->
+    <!-- but how!? -->
+  </div>rai
+  <div class="field">
+    <%= f.submit "Sign up!" %>
+  </div>
+<% end %>

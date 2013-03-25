@@ -1,5 +1,6 @@
 Rainforest::Application.routes.draw do
   resources :products
+  resources :users        # Consider we may not want an "index" action here.
 
 
   # The priority is based upon order of creation:
