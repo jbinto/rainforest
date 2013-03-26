@@ -1,4 +1,7 @@
 Rainforest::Application.routes.draw do
+  resources :reviews
+
+
   resources :products
   resources :users        # Consider we may not want an "index" action here.
   resources :sessions, only: [:new, :destroy, :create]     # We probably only want create and destroy
