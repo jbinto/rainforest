@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :review do
-    user nil
-    product nil
+    user { FactoryGirl.create(:user) }
+    product { FactoryGirl.create(:product) }
     comment "MyText"
   end
 end
