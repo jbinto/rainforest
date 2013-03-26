@@ -5,6 +5,8 @@ class Product < ActiveRecord::Base
   validates :price_in_cents, :numericality => {:only_integer => true}
   validates :price_in_dollars, :numericality => { greater_than: 0 }
 
+  has_many :reviews
+
   def price_in_dollars
     if self.price_in_cents?
      self.price_in_cents.to_f / 100.0
