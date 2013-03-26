@@ -34,7 +34,19 @@ class UserTest < ActiveSupport::TestCase
 
     was_saved = user_two.save
     refute was_saved
+  end
 
+  test "password and confirmation must match" do
+    user = FactoryGirl.build(:user, 
+      :password => "abc", :password_confirmation => "def")
+    refute user.valid?
+  end
+
+  test "password and confirmation are required" do
+    user = FactoryGirl.build(:user)
+    user.password = ""
+    user.password_confirmation = ""
+    refute user.save
   end
 
 
