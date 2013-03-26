@@ -8,6 +8,10 @@
 </head>
 <body>
 
+  <% if flash[:alert] %>
+    <strong><%= flash[:alert] %></strong>
+  <% end %>
+
   <p>
     <% if current_user %>
       Signed in as <%= current_user.email %>.
